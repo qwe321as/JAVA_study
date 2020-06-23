@@ -1,8 +1,7 @@
-package 예지;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Student{
+class Student1{
 	private String name;
 	private int kor;
 	private int eng;
@@ -35,7 +34,7 @@ class Student{
 		this.eng = eng;
 	}
 }
-public class Ex {
+public class ㅇㅇㅇㅇㅇ {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
 		ArrayList<Student> list = new ArrayList<Student>();
@@ -50,8 +49,6 @@ public class Ex {
 			eng = sc.nextInt();
 			System.out.println("계속?");
 			qn = sc.next();
-			Student st = new Student(name, kor, eng);
-			list.add(st);
 			if(qn.equals("n")) {
 				break;}}
 System.out.println(list);
