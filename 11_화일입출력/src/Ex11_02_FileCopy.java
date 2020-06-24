@@ -9,7 +9,7 @@ public class Ex11_02_FileCopy {
 		try {
 			FileInputStream fis = 
 					new FileInputStream("from.txt");
-			FileOutputStream fos = new FileOutputStream("to.txt");
+			FileOutputStream fos = new FileOutputStream("to.txt",true);
 			
 			// false : 없으면 하나 생성됨, 있으면 화일안의 내용 다 지우고 새로 만들어진다.
 			// true : 없으면 하나 생성됨, 있으면 기존 내용뒤에 추가된다.

@@ -5,6 +5,8 @@ import java.awt.Label;
 import java.awt.Panel;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 class ItemEventEx extends Frame implements ItemListener{
 	Choice ch = new Choice();
@@ -14,6 +16,12 @@ class ItemEventEx extends Frame implements ItemListener{
 	Label lb = new Label("꽃을 선택하세요.");
 	Label lb1 = new Label("                      ");
 	ItemEventEx(){
+		addWindowListener(
+				new WindowAdapter() {
+					public void windowClosing(WindowEvent e) {
+						System.out.println("닫는다.");
+						System.exit(0);}
+					});
 		setSize(400,300);
 		setVisible(true);
 		//borderlayout 기본임ㅋ
