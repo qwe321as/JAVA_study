@@ -15,6 +15,7 @@ class JTablesub extends JFrame{
 		setSize(300,200);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+		
 		JTable table = new JTable(data,jtitle);
 		int v =ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS;
 		int h =ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS;
