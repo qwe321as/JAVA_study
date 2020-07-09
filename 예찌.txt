@@ -1,0 +1,23 @@
+1. 조회
+2. 특정상품조회
+3.수정
+4.삭제
+5.추가
+6.종료
+drop sequence yee;
+create sequence yee
+increment  by 1
+start with 1
+minvalue 1;
+
+create table ji(
+id number primary key,
+name varchar2(10),
+likenum number);
+
+insert into ji values (yee.nextval, '예지' , 13);
+insert into ji values (yee.nextval, '민지' , 20);
+insert into ji values (yee.nextval, '수지' , 23);
+insert into ji values (yee.nextval, '솔지' , 63);
+insert into ji values (yee.nextval, '신지' , 88);
+
