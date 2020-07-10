@@ -50,8 +50,10 @@ public class Main {
 	}
 	public void showmain(ArrayList<Bean> list) {
 		System.out.println("아이디\t이름\t좋아하는숫자\t");
-		for (int i = 0; i < list.size(); i++) {
-			String result ="list";
+		for (Bean bean:list) {
+//			System.out.printf("%d\t,%s\t,%d\t",bean.getId(),bean.getName(),bean.getLikenum());
+			String result = bean.getId()+"\t"+bean.getName()+"\t"+bean.getLikenum();
+			System.out.println(result);
 		}
 
 	}

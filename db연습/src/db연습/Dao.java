@@ -37,14 +37,24 @@ public class Dao {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				int id = rs.getInt("id");
 				Bean bean = new Bean();
+				int id = rs.getInt("id");
 				bean.setId(id);
 				bean.setName(rs.getString("name"));
 				bean.setLikenum(rs.getInt("Likenum"));
 				list.add(bean);
 			}
 		} catch (SQLException e) {
+		}finally {
+				try {
+					if(con!=null)
+					con.close();
+					if(rs!=null)
+						rs.close();
+					if(ps!=null)
+						ps.close();
+				} catch (SQLException e) {
+				}
 		}
 		
 		return list;

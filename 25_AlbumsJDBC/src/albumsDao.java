@@ -147,9 +147,15 @@ public class albumsDao {
 				"from(select rownum as rank,   num, song, singer, company, price, pub_day " + 
 				"from (select  rownum,  num, song, singer, company, price, pub_day  from albums order by price desc , singer asc )) " + 
 				"where rank between "+start+" and " + last;
+//String sql = "select rownum,num,song,singer,company,price,pub_day,rank " + 
+//		"from(select rownum,num,song,singer,company,price,pub_day,rank() over(order by price desc, singer asc) as rank " + 
+//		"from albums) where rank between ? and ?"; 
 		try {
 			ps=con.prepareStatement(sql);
-			rs=ps.executeQuery();
+//			ps.setInt(1, start);
+//			ps.setInt(2, last); 
+			rs=ps.executeQuery();			
+	
 			while (rs.next()) {
 				int num = rs.getInt("num");
 				String song = rs.getString("song");
@@ -224,10 +230,10 @@ public class albumsDao {
 	public ArrayList<albumsBean> jogunalbums(String column, String ssnum) {
 		ArrayList<albumsBean>list = new ArrayList<albumsBean>();
 		gcon();
-		String sql = "select * from albums where "+ column +" like ?" ;
+		String sql = "select * from albums where lower("+ column +") like ?" ;
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setString(1, "%"+ssnum+"%"); 
+			ps.setString(1, "%"+ssnum.toLowerCase()+"%"); 
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				bean = new albumsBean();

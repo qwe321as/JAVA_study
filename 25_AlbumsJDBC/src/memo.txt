@@ -4,7 +4,8 @@ create sequence albumseq
 	increment by 1
 	start with 1 
 	minvalue 1
-	maxvalue 100;
+	maxvalue 100
+	nocache;
 
 
 drop table albums;
